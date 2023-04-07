@@ -32,6 +32,14 @@
     display: block;
 }
 
+.container-botao:checked ~ .container-rotulo > .cabecalho-menu-h {
+    background-image: url("../assets/Menu Aberto.svg");
+}
+
+.container-botao:checked ~ .container-rotulo {
+    background: var(--azul-degrade);
+}
+
 .lista-menu {
     display: none;
     position: absolute;
@@ -61,4 +69,120 @@
 .lista-menu-item {
     padding: 1em;
     background-color: var(--branco);
+}
+
+.container-titulo,
+.opcoes,
+.container-texto {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .cabecalho-menu-h {
+        display: none;
+    }
+
+    .container-titulo {
+        display: block;
+        font-family: var(--fnt-secundaria), sans-serif;
+        font-size: 30px;
+    }
+
+    .container-titulo {
+        font-weight: 400;
+    }
+
+    .container-titulo-negrito {
+        font-weight: 700;
+    }
+
+    .opcoes {
+        display: flex;
+        align-items: center;
+    }
+
+    .opcoes-item {
+        padding: 2em 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes-link {
+        text-decoration: none;
+        color: black;
+    }
+
+    .container-imagem-dir {
+        padding-right: 4em;
+    }
+
+    .container-imagem-esq {
+        padding-left: 4em;
+    }
+
+    .container-imagem-transparente {
+        display: none;
+    }
+
+    .opcoes-botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes-botao:checked ~ .opcoes-rotulo > .opcoes-item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .opcoes-botao {
+        display: none;
+    }
+
+    .lista-menu-item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu-item:hover > .lista-menu-link {
+        -webkit-text-fill-color: var(--branco);
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .container-texto {
+        display: block;
+    }
+
+    .container-titulo {
+        margin-right: 2em;
+    }
+
+    .container-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .container-imagem-dir {
+        padding-right: 1em;
+    }
+
+    .container-imagem-esq {
+        padding-left: 1em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .lista-menu-item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu-item:hover > .lista-menu-link {
+        -webkit-text-fill-color: var(--branco);
+    }
 }
